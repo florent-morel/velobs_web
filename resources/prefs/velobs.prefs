@@ -1,7 +1,7 @@
 ############
 # CATEGORY #
 ############
-
+# TODO
 
 
 ###############
@@ -25,7 +25,7 @@ ter_3_lib="Muretain"
 ter_3_type=0
 ter_3_ids="31395;31187;31165;31253;31287;31181;31486;31533;31499;31475;31248;31420;31421;31433;31460;31580"
 
-ter_list
+# ter_list
 
 #############
 # CONFIGMAP #
@@ -69,3 +69,19 @@ status_list['4']="Refusé"
 status_list['5']="A définir"
 status_list['6']="Test"
 
+
+############
+# QUARTIER #
+############
+# See dedicated files quartiers_*.prefs
+#TODO include list of files
+quartier_file=/var/www/velobs/resources/prefs/quartiers_TLS
+
+
+
+###########
+# LANGUAGE #
+###########
+# TODO
+lang_1="1, 'France', 'fr'"
+lang_2="2, 'English', 'en'"

@@ -75,7 +75,11 @@ C'est en production à Toulouse pour 2 pieds 2 roues sur : http://velobs.2p2r.or
      * T_header_main : contenu du panneau supérieur de la page principale
      * T_textHowToParticipate : contenu du pop up "comment participer"
   * adapter les logos dans resources/images en respectant les dimensions    
-  * adapter les tables
+  * Configuration par fichier
+     * le dossier prefs/ contient les différents fichiers de configuration de l'application
+        * velobs.prefs : donées principales
+        * quartiers_*.prefs : liste des quartiers pour une zone donnée
+  * adapter les tables : voir configuration
      * configmap: coordonnees GPS du centre de la carte
      * territoire: liste des territoires caracterisés par les codes INSEE des communes du territoire  
      * commune:  liste des communes caractérisées par leur code INSEE et leur contour géographique
