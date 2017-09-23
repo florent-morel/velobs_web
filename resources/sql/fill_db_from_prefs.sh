@@ -119,7 +119,7 @@ echo "$cmd_language_base$cmd_language" | mysql -v -u $username -p$pwd $db
 echo "###############"
 echo "# TRANSLATION #"
 echo "###############"
-INSERT INTO translation (id_translation, code_translation, lib_translation, language_id_language) VALUES
+cmd_l10n="INSERT INTO translation (id_translation, code_translation, lib_translation, language_id_language) VALUES
 (1, 'DISCONNECT', 'Déconnexion', 1),
 (2, 'DISCONNECT', 'Disconnect', 2),
 (3, 'OPENPUBLICMAP', 'Prévisualiser la carte publique', 1),
@@ -147,4 +147,7 @@ INSERT INTO translation (id_translation, code_translation, lib_translation, lang
 (25, 'PHOTOTRANSFERTDONE', 'Le transfert de la photo a réussi.', 1),
 (26, 'PHOTOTRANSFERTDONE', 'The transfer of the photo was successful.', 2),
 (27, 'MADEBYMOOVEATIS', 'Mooveatis', 1),
-(28, 'MADEBYMOOVEATIS', 'Mooveatis', 2);
+(28, 'MADEBYMOOVEATIS', 'Mooveatis', 2)"
+
+
+echo "$cmd_l10n" | mysql -v -u $username -p$pwd $db
