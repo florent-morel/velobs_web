@@ -8,6 +8,8 @@
 # TERRITOIRES #
 ###############
 ter_0_lib="Zone couverte par VelObs"
+# lib_type_ids
+#ter_0="Zone couverte par VelObs"
 ter_0_type=0
 ter_0_ids=""
 
@@ -23,6 +25,7 @@ ter_3_lib="Muretain"
 ter_3_type=0
 ter_3_ids="31395;31187;31165;31253;31287;31181;31486;31533;31499;31475;31248;31420;31421;31433;31460;31580"
 
+ter_list
 
 #############
 # CONFIGMAP #
@@ -54,3 +57,15 @@ prio_list['7']="Refusé par l\'association"
 prio_list['8']="Urgence"
 prio_list['12']="Refusé par la collectivité"
 prio_list['15']="Doublon"
+
+
+###########
+# STATUS #
+###########
+status_list['1']="En cours"
+status_list['2']="Réalisé"
+status_list['3']="Programmé"
+status_list['4']="Refusé"
+status_list['5']="A définir"
+status_list['6']="Test"
+

@@ -34,14 +34,7 @@ CREATE TABLE `status` (
 --
 -- Contenu de la table `status`
 --
-
-INSERT INTO `status` (`id_status`, `lib_status`) VALUES
-(1, 'En cours'),
-(2, 'Réalisé'),
-(3, 'Programmé'),
-(4, 'Refusé'),
-(5, 'A définir');
-
+-- Fill it from prefs
 --
 -- Index pour les tables exportées
 --

@@ -23,7 +23,7 @@ cmd_ter_base="INSERT INTO territoire (id_territoire, lib_territoire, type_territ
 cmd_ter_0="(0, '$ter_0_lib', $ter_0_type, '$ter_0_ids')"
 cmd_ter_1="(1, '$ter_1_lib', $ter_1_type, '$ter_1_ids')"
 cmd_ter_2="(2, '$ter_2_lib', $ter_2_type, '$ter_2_ids')"
-cmd_ter_3="(3, '$ter_2_lib', $ter_3_type, '$ter_3_ids')"
+cmd_ter_3="(3, '$ter_3_lib', $ter_3_type, '$ter_3_ids')"
 
 echo "$cmd_ter_base$cmd_ter_0" | mysql -v -u $username -p$pwd $db
 echo "$cmd_ter_base$cmd_ter_1" | mysql -v -u $username -p$pwd $db
@@ -59,6 +59,16 @@ for i in ${!prio_list[@]}; do
 done
 
 
+###########
+# STATUS #
+###########
+cmd_status_base="INSERT INTO status (id_status, lib_status) VALUES "
+
+# ${!array[@]} is the list of all the indexes set in the array
+for i in ${!status_list[@]}; do
+	cmd_status="($i, '${status_list[$i]}')"
+	echo "$cmd_status_base$cmd_status" | mysql -v -u $username -p$pwd $db
+done
 
 
 
