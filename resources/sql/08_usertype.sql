@@ -33,13 +33,7 @@ CREATE TABLE `usertype` (
 
 --
 -- Contenu de la table `usertype`
---
-
-INSERT INTO `usertype` (`id_usertype`, `lib_usertype`) VALUES
-(1, 'Administrateur'),
-(2, 'Comcom'),
-(3, 'Pole technique'),
-(4, 'Responsable pole 2p2r');
+-- Fill it from prefs
 
 --
 -- Index pour les tables exportées

@@ -1,0 +1,56 @@
+############
+# CATEGORY #
+############
+
+
+
+###############
+# TERRITOIRES #
+###############
+ter_0_lib="Zone couverte par VelObs"
+ter_0_type=0
+ter_0_ids=""
+
+ter_1_lib="Toulouse Metropole"
+ter_1_type=0
+ter_1_ids="31555;31003;31022;31032;31044;31053;31056;31069;31088;31091;31116;31149;31150;31157;31163;31182;31184;31186;31205;31230;31282;31293;31351;31352;31355;31389;31417;31418;31445;31467;31488;31490;31506;31541;31557;31561;31588"
+
+ter_2_lib="Sicoval"
+ter_2_type=0
+ter_2_ids="31254;31025;31035;31036;31004;31048;31057;31058;31113;31148;31151;31161;31162;31169;31171;31192;31227;31240;31249;31259;31284;31340;31366;31381;31384;31401;31402;31409;31411;31429;31437;31446;31448;31568;31575;31578"
+
+ter_3_lib="Muretain"
+ter_3_type=0
+ter_3_ids="31395;31187;31165;31253;31287;31181;31486;31533;31499;31475;31248;31420;31421;31433;31460;31580"
+
+
+#############
+# CONFIGMAP #
+#############
+
+lat="43.6157"
+lon="6.9435"
+zoom="12"
+
+
+#############
+# USERTYPE #
+#############
+usertype['1']="Administrateur"
+usertype['2']="Comcom"
+usertype['3']="Pole technique"
+usertype['4']="Responsable pole association"
+
+
+############
+# PRIORITE #
+############
+
+prio_list['1']="Priorité 1"
+prio_list['2']="Priorité 2"
+prio_list['4']="A modérer"
+prio_list['6']="Clôturé"
+prio_list['7']="Refusé par l\'association"
+prio_list['8']="Urgence"
+prio_list['12']="Refusé par la collectivité"
+prio_list['15']="Doublon"

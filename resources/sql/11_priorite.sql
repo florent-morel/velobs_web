@@ -34,17 +34,7 @@ CREATE TABLE `priorite` (
 --
 -- Contenu de la table `priorite`
 --
-
-INSERT INTO `priorite` (`id_priorite`, `lib_priorite`) VALUES
-(1, 'Priorité 1'),
-(2, 'Priorité 2'),
-(4, 'A modérer'),
-(6, 'Clôturé'),
-(7, 'Refusé par l\'association'),
-(8, 'Urgence'),
-(12, 'Refusé par la collectivité'),
-(15, 'Doublon');
-
+-- Fill it from prefs
 --
 -- Index pour les tables exportées
 --
