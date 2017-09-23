@@ -46,11 +46,11 @@ usertype['4']="Responsable pole association"
 # PRIORITE #
 ############
 
-prio_list['1']="Priorité 1"
-prio_list['2']="Priorité 2"
-prio_list['4']="A modérer"
-prio_list['6']="Clôturé"
-prio_list['7']="Refusé par l\'association"
+prio_list['1']="PrioritÃ© 1"
+prio_list['2']="PrioritÃ© 2"
+prio_list['4']="A modÃ©rer"
+prio_list['6']="ClÃ´turÃ©"
+prio_list['7']="RefusÃ© par l\'association"
 prio_list['8']="Urgence"
-prio_list['12']="Refusé par la collectivité"
+prio_list['12']="RefusÃ© par la collectivitÃ©"
 prio_list['15']="Doublon"
