@@ -65,7 +65,12 @@ C'est en production à Toulouse pour 2 pieds 2 roues sur : http://velobs.2p2r.or
  * modifier les droits en écriture pour le fichier resources/css/icon.css
  * créer une base de données MySQL (ex. velobs) :
     * interclassement : utf8_general_ci
- * importer dans l'ordre de la numérotation les 19 scripts SQL du répertoire resources/sql
+ * pour importer les 19 scripts SQL du répertoire resources/sql, utiliser le script dédié
+ 	* chmod +x ./import_script.sh
+ 	* import_script.sh
+ * pour remplir la base de données, utiliser le script dédié
+ 	* chmod +x ./fill_db_from_prefs.sh
+ 	* ./fill_db_from_prefs.sh 
  
 #   Notice d'adaptation à d'autres territoires pour l'application VelObs :
 
@@ -73,7 +78,7 @@ C'est en production à Toulouse pour 2 pieds 2 roues sur : http://velobs.2p2r.or
      * définir les variables propres à l'association vélo et les collectivités concernées
   * éditer les fichiers  lib/js/translate_fr.js et lib/js/translate_en.js pour adapter à votre contexte les variables
      * T_header_main : contenu du panneau supérieur de la page principale
-     * T_textHowToParticipate : contenu du pop up "comment participer"
+     * T_textEmergencyContact : contenu du pop up "comment participer", indiquer le numéro de téléphone du service technique de la collectivité.
   * adapter les logos dans resources/images en respectant les dimensions    
   * Configuration par fichier
      * le dossier prefs/ contient les différents fichiers de configuration de l'application

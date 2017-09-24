@@ -30,59 +30,20 @@ echo "$cmd_ter_base$cmd_ter_1" | mysql -v -u $username -p$pwd $db
 echo "$cmd_ter_base$cmd_ter_2" | mysql -v -u $username -p$pwd $db
 echo "$cmd_ter_base$cmd_ter_3" | mysql -v -u $username -p$pwd $db
 
-cmd_usertype_base="INSERT INTO usertype (id_usertype, lib_usertype) VALUES "
-
-
 
 echo "############"
-echo "# USERTYPE #"
+echo "# COMMUNES #"
 echo "############"
-cmd_usertype_base="INSERT INTO usertype (id_usertype, lib_usertype) VALUES "
-
-# ${!array[@]} is the list of all the indexes set in the array
-for i in ${!usertype[@]}; do
-	cmd_usertype="($i, '${usertype[$i]}')"
-	echo "$cmd_usertype_base$cmd_usertype" | mysql -v -u $username -p$pwd $db
-done
-
-
-echo "############"
-echo "# PRIORITE #"
-echo "############"
-cmd_prio_base="INSERT INTO priorite (id_priorite, lib_priorite) VALUES "
-
-# ${!array[@]} is the list of all the indexes set in the array
-for i in ${!prio_list[@]}; do
-	cmd_prio="($i, '${prio_list[$i]}')"
-	# echo "$cmd_prio_base$cmd_prio"
-	echo "$cmd_prio_base$cmd_prio" | mysql -v -u $username -p$pwd $db
-done
-
-
-
-echo "############"
-echo "# QUARTIER #"
-echo "############"
-cmd_quartier_base="INSERT INTO quartier (id_quartier, lib_quartier) VALUES "
-
-# ${!array[@]} is the list of all the indexes set in the array
-for i in ${!quartier_list[@]}; do
-	cmd_prio="($i, '${quartier_list[$i]}')"
-	# echo "$cmd_quartier_base$cmd_quartier"
-	echo "$cmd_quartier_base$cmd_quartier" | mysql -v -u $username -p$pwd $db
-done
-
-
-echo "##########"
-echo "# STATUS #"
-echo "##########"
-cmd_status_base="INSERT INTO status (id_status, lib_status) VALUES "
-
-# ${!array[@]} is the list of all the indexes set in the array
-for i in ${!status_list[@]}; do
-	cmd_status="($i, '${status_list[$i]}')"
-	echo "$cmd_status_base$cmd_status" | mysql -v -u $username -p$pwd $db
-done
+# See dedicated files communes_*.prefs
+#source $commune_file.prefs
+#
+#cmd_commune_base="INSERT INTO commune (id_commune, lib_commune, geom_commune) VALUES "
+#
+## ${!array[@]} is the list of all the indexes set in the array
+#for i in ${!commune_list[@]}; do
+#	cmd_commune="($i, '${commune_list[$i]}')"
+#	echo "$cmd_commune_base$cmd_commune" | mysql -v -u $username -p$pwd $db
+#done
 
 echo "############"
 echo "# QUARTIER #"
@@ -96,6 +57,41 @@ cmd_quartier_base="INSERT INTO quartier (id_quartier, lib_quartier) VALUES "
 for i in ${!quartier_list[@]}; do
 	cmd_quartier="($i, '${quartier_list[$i]}')"
 	echo "$cmd_quartier_base$cmd_quartier" | mysql -v -u $username -p$pwd $db
+done
+
+
+echo "############"
+echo "# USERTYPE #"
+echo "############"
+cmd_usertype_base="INSERT INTO usertype (id_usertype, lib_usertype) VALUES "
+
+# ${!array[@]} is the list of all the indexes set in the array
+for i in ${!usertype[@]}; do
+	cmd_usertype="($i, '${usertype[$i]}')"
+	echo "$cmd_usertype_base$cmd_usertype" | mysql -v -u $username -p$pwd $db
+done
+
+echo "############"
+echo "# PRIORITE #"
+echo "############"
+cmd_prio_base="INSERT INTO priorite (id_priorite, lib_priorite) VALUES "
+
+# ${!array[@]} is the list of all the indexes set in the array
+for i in ${!prio_list[@]}; do
+	cmd_prio="($i, '${prio_list[$i]}')"
+	# echo "$cmd_prio_base$cmd_prio"
+	echo "$cmd_prio_base$cmd_prio" | mysql -v -u $username -p$pwd $db
+done
+
+echo "##########"
+echo "# STATUS #"
+echo "##########"
+cmd_status_base="INSERT INTO status (id_status, lib_status) VALUES "
+
+# ${!array[@]} is the list of all the indexes set in the array
+for i in ${!status_list[@]}; do
+	cmd_status="($i, '${status_list[$i]}')"
+	echo "$cmd_status_base$cmd_status" | mysql -v -u $username -p$pwd $db
 done
 
 
@@ -151,3 +147,13 @@ cmd_l10n="INSERT INTO translation (id_translation, code_translation, lib_transla
 
 
 echo "$cmd_l10n" | mysql -v -u $username -p$pwd $db
+
+
+echo "################"
+echo "# USER - Admin #"
+echo "################"
+cmd_usertype_base="INSERT INTO users (lib_users, pass_users, num_pole, usertype_id_usertype, language_id_language, territoire_id_territoire, mail_users, nom_users) VALUES "
+
+cmd_usertype="('$admin_login', '$admin_pwd', $admin_num_pole, $admin_usertype, $admin_language, $admin_territoire_id, '$admin_email', '$admin_name')"
+echo "$cmd_usertype_base$cmd_usertype" | mysql -v -u $username -p$pwd $db
+
