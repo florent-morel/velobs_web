@@ -1,3 +1,14 @@
+
+
+
+############
+# DATABASE #
+############
+username="velobs"
+pwd="velobs"
+db="velobs"
+
+
 ############
 # CATEGORY #
 ############
@@ -75,11 +86,30 @@ admin_territoire_id="0"
 admin_name="Admin"
 admin_email="test@test.org"
 
+############
+# CATEGORY #
+############
+category_0_lib="Stationnement"
+category_0_icon="iconmarker8"
+category_0_treerank="0"
+category_0_display="1"
+
+
+################
+# SUB-CATEGORY #
+################
+#subcategory_0_lib="Courte durée"
+#subcategory_0_icon="iconmarker11"
+#subcategory_0_treerank="1"
+#subcategory_0_display="0"
+#subcategory_0_proppublic="0"
+#subcategory_0_category_id="0"
+
+
 
 ############
 # PRIORITE #
 ############
-
 prio_list['1']="Priorité 1"
 prio_list['2']="Priorité 2"
 prio_list['4']="A modérer"

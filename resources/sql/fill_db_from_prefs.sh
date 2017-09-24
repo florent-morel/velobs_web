@@ -1,9 +1,5 @@
 #!/bin/bash
 
-username="velobs"
-pwd="velobs"
-db="velobs"
-
 prefs_file=/var/www/velobs/resources/prefs/velobs.prefs
 echo "Filling database $db from preferences file $prefs_file"
 source $prefs_file
@@ -70,6 +66,15 @@ for i in ${!usertype[@]}; do
 	cmd_usertype="($i, '${usertype[$i]}')"
 	echo "$cmd_usertype_base$cmd_usertype" | mysql -v -u $username -p$pwd $db
 done
+
+echo "############"
+echo "# CATEGORY #"
+echo "############"
+cmd_category_base="INSERT INTO category (lib_category, icon_category, treerank_category, display_category) VALUES "
+
+cmd_category_0="('$category_0_lib', '$category_0_icon', '$category_0_treerank', '$category_0_display')"
+echo "$cmd_category_base$cmd_category_0" | mysql -v -u $username -p$pwd $db
+
 
 echo "############"
 echo "# PRIORITE #"
