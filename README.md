@@ -40,7 +40,8 @@ C'est en production à Toulouse pour 2 pieds 2 roues sur : http://velobs.2p2r.or
     * répertoire images les images logo et autres
     * répertoire kml des fichiers de géométries (utile au début)
     * répertoire pictures contient toutes les images relatives aux enregistrements
-    * répertoire sql contient toutes les tables de la base de données ) la date du 10 janvier 2016
+    * répertoire prefs contient tous les fichiers de configuration
+    * répertoire sql contient toutes les tables de la base de données à la date du 10 janvier 2016
    
 #   Notice d'installation pour l'application VelObs :
 
@@ -48,6 +49,27 @@ C'est en production à Toulouse pour 2 pieds 2 roues sur : http://velobs.2p2r.or
  * copier le fichier lib/js/key.js.template vers lib/js/key.js
  * éditer lib/js/key.js en ajoutant votre clé d'API thunderforest
  * copier le ficher lib/php/key.php.template vers lib/php/key.php
+ * copier le fichier resources/prefs/velobs.prefs.template vers resources/prefs/velobs.prefs
+
+#   éditer resources/prefs/velobs.prefs :
+
+ * Configurer velobs pour un autre territoire :
+ 	* CONFIGMAP : coordonnées GPS du centre de la carte et niveau de zoom.
+ 	* TERRITOIRES : remplir le libellé, type et les ids (codes INSEE des communes du territoire).
+ 	* COMMUNE : [non configurable] liste des communes caractérisées par leur code INSEE et leur contour géographique.
+    * QUARTIER: [non configurable] liste des quartiers de la metropole caractérisés par leur nom.
+ 	* USER - Admin : administrateur par défaut, modifier le login & mot de passe. D'autres utilisateurs pourront être ajoutés via l'espace d'administration.
+    * POLE: [non configurable] liste des poles caractérisés par leur nom et leur contour géographique.
+ 
+ * 	Paramètres avancés, à adapter au besoin : 	
+ 	* CATEGORY : libellés, icone, rang et affichage (?) des catégories d'observations.
+ 		* SUB-CATEGORY : libellés, icone, rang et affichage (?) des sous-catégories d'observations.
+ 	* PRIORITE : libellés des priorités des observations.
+ 	* STATUS :  libellés des statuts des observations.
+ 	* USERTYPE : types d'utilisateurs. Par défaut : Administrateur, Comcom (?), Pole technique, Responsable pole association.
+    * LANGUAGE : Langues disponibles. Par défaut : fr, en.
+ * créer une base de données MySQL (ex. velobs) :
+    * interclassement : utf8_general_ci
  * éditer le fichier lib/php/key.php :
     * définir la constante HOST : url du serveur MySQL
     * définir la constante PORT : port du serveur MySQL
@@ -63,8 +85,6 @@ C'est en production à Toulouse pour 2 pieds 2 roues sur : http://velobs.2p2r.or
     * resources/icon/marker/16x18
     * resources/csv
  * modifier les droits en écriture pour le fichier resources/css/icon.css
- * créer une base de données MySQL (ex. velobs) :
-    * interclassement : utf8_general_ci
  * pour importer les 19 scripts SQL du répertoire resources/sql, utiliser le script dédié
  	* chmod +x ./import_script.sh
  	* import_script.sh
@@ -80,13 +100,7 @@ C'est en production à Toulouse pour 2 pieds 2 roues sur : http://velobs.2p2r.or
      * T_header_main : contenu du panneau supérieur de la page principale
      * T_textEmergencyContact : contenu du pop up "comment participer", indiquer le numéro de téléphone du service technique de la collectivité.
   * adapter les logos dans resources/images en respectant les dimensions    
-  * Configuration par fichier
-     * le dossier prefs/ contient les différents fichiers de configuration de l'application
+  * éditer les fichiers de préférences
+     * le dossier resources/prefs/ contient les différents fichiers de configuration de l'application
         * velobs.prefs : donées principales
         * quartiers_*.prefs : liste des quartiers pour une zone donnée
-  * adapter les tables : voir configuration
-     * configmap: coordonnees GPS du centre de la carte
-     * territoire: liste des territoires caracterisés par les codes INSEE des communes du territoire  
-     * commune:  liste des communes caractérisées par leur code INSEE et leur contour géographique
-     * pole:  liste des poles  caractérisés par leur nom et leur contour géographique
-     * quartier: liste des quartiers de la metropole caractérisés par leur nom
