@@ -57,21 +57,25 @@ C'est en production à Toulouse pour 2 pieds 2 roues sur : http://velobs.2p2r.or
  	* CONFIGMAP : coordonnées GPS du centre de la carte et niveau de zoom.
  	* TERRITOIRES : remplir le libellé, type et les ids (codes INSEE des communes du territoire).
  	* COMMUNE : [non configurable] liste des communes caractérisées par leur code INSEE et leur contour géographique.
-    * QUARTIER: [non configurable] liste des quartiers de la metropole caractérisés par leur nom.
+    * QUARTIER: liste des noms de quartiers d'une commune. Un fichier de configuration par ville.
+    	* 1. Copier le fichier resources/prefs/quartiers.template.prefs vers resources/prefs/quartiers.ABCD.prefs
+    	* 2. Indiquer l'id de la commune dans quartier_id_commune (TODO : indiquer comment).
+    	* 3. Remplir les quartiers de cette ville (TODO : indiquer comment).
+    	* 4. Répéter pour configurer une autre ville.
  	* USER - Admin : administrateur par défaut, modifier le login & mot de passe. D'autres utilisateurs pourront être ajoutés via l'espace d'administration.
     * POLE: [non configurable] liste des poles caractérisés par leur nom et leur contour géographique.
  
  * 	Paramètres avancés, à adapter au besoin : 	
  	* DATABASE : login, password et nom de la base de données MySQL VelObs.
- 	* CATEGORY : libellés, icone, rang et affichage (?) des catégories d'observations.
- 		* SUB-CATEGORY : libellés, icone, rang et affichage (?) des sous-catégories d'observations.
+ 	* CATEGORY : libellés, icone, rang et affichage (TODO : ?) des catégories d'observations.
+ 		* SUB-CATEGORY : libellés, icone, rang et affichage (TODO : ?) des sous-catégories d'observations.
  	* PRIORITE : libellés des priorités des observations.
  	* STATUS :  libellés des statuts des observations.
- 	* USERTYPE : types d'utilisateurs. Par défaut : Administrateur, Comcom (?), Pole technique, Responsable pole association.
+ 	* USERTYPE : types d'utilisateurs. Par défaut : Administrateur, Comcom (TODO : ?), Pole technique, Responsable pole association.
     * LANGUAGE : Langues disponibles. Par défaut : fr, en.
  * créer une base de données MySQL (ex. velobs) :
     * interclassement : utf8_general_ci
- * éditer le fichier lib/php/key.php :
+ * Editer le fichier lib/php/key.php :
     * définir la constante HOST : url du serveur MySQL
     * définir la constante PORT : port du serveur MySQL
     * définir la constante DB_USER : login du serveur MySQL

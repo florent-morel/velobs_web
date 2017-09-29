@@ -28,6 +28,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `quartier` (
 `id_quartier` int(11) NOT NULL,
+ `id_commune` int(11) NOT NULL,
   `lib_quartier` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=100000 DEFAULT CHARSET=utf8;
 

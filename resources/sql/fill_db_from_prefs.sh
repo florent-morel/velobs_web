@@ -1,6 +1,10 @@
 #!/bin/bash
 
-prefs_file=/var/www/velobs/resources/prefs/velobs.prefs
+velobs_root="/var/www/velobs"
+resources_path="$velobs_root/resources"
+prefs_file="$resources_path/prefs/velobs.prefs"
+quartier_files="$resources_path/prefs/quartiers/quartiers.*.prefs"
+
 echo "Filling database $db from preferences file $prefs_file"
 source $prefs_file
 
@@ -45,15 +49,38 @@ echo "############"
 echo "# QUARTIER #"
 echo "############"
 # See dedicated files quartiers_*.prefs
-source $quartier_file.prefs
+#source $quartier_file.prefs
+#
+#cmd_quartier_base="INSERT INTO quartier (id_quartier, lib_quartier) VALUES "
+#
+## ${!array[@]} is the list of all the indexes set in the array
+#for i in ${!quartierlist[@]}; do
+#	cmd_quartier="($i, '${quartierlist[$i]}')"
+#	echo "$cmd_quartier_base$cmd_quartier" | mysql -v -u $username -p$pwd $db
+#done
 
-cmd_quartier_base="INSERT INTO quartier (id_quartier, lib_quartier) VALUES "
-
-# ${!array[@]} is the list of all the indexes set in the array
-for i in ${!quartier_list[@]}; do
-	cmd_quartier="($i, '${quartier_list[$i]}')"
-	echo "$cmd_quartier_base$cmd_quartier" | mysql -v -u $username -p$pwd $db
-done
+cmd_quartier_base="INSERT INTO quartier (id_quartier, id_commune, lib_quartier) VALUES "
+if [ -z "$(ls -A $quartier_files)" ]; then
+	echo "No file found, please create a file for at least one city: prefs/quartiers/quartiers.ABC.prefs"
+else
+	echo "Not Empty"
+	for file in $quartier_files
+	do
+	        echo Processing $file...
+			source $file
+			# ${!array[@]} is the list of all the indexes set in the array
+			for i in ${!quartierlist[@]}; do
+				cmd_quartier="($quartier_id_commune$i, $quartier_id_commune, '${quartierlist[$i]}')"
+				echo "$cmd_quartier_base$cmd_quartier" | mysql -v -u $username -p$pwd $db
+			done
+	        echo Finished processing $file...
+	done
+	echo Processing default...
+	cmd_quartier_zero="(0, 0, '${quartierlist_default[0]}')"
+	echo "$cmd_quartier_base$cmd_quartier_zero" | mysql -v -u $username -p$pwd $db
+	cmd_quartier_99999="(99999, 0, '${quartierlist_default[99999]}')"
+	echo "$cmd_quartier_base$cmd_quartier_99999" | mysql -v -u $username -p$pwd $db
+fi
 
 
 echo "############"

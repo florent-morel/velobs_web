@@ -38,15 +38,15 @@ ter_3_ids="31395;31187;31165;31253;31287;31181;31486;31533;31499;31475;31248;314
 ############
 # See dedicated files quartiers_*.prefs
 #TODO include list of files
-commune_file=/var/www/velobs/resources/prefs/communes_TLS
+commune_file=/var/www/velobs/resources/prefs/communes.TLS
 
 
 ############
 # QUARTIER #
 ############
-# See dedicated files communes_*.prefs
-#TODO include list of files
-quartier_file=/var/www/velobs/resources/prefs/quartiers_TLS
+# To add new neighbourhoods, see dedicated files quartiers.*.prefs
+quartierlist_default['0']="Aucun"
+quartierlist_default['99999']="Inutilisé"
 
 ################
 # USER - Admin #
