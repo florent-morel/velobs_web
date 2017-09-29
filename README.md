@@ -58,7 +58,7 @@ C'est en production à Toulouse pour 2 pieds 2 roues sur : http://velobs.2p2r.or
  	* TERRITOIRES : remplir le libellé, type et les ids (codes INSEE des communes du territoire).
  	* COMMUNE : [non configurable] liste des communes caractérisées par leur code INSEE et leur contour géographique.
     * QUARTIER: liste des noms de quartiers d'une commune. Un fichier de configuration par ville.
-    	* 1. Copier le fichier resources/prefs/quartiers.template.prefs vers resources/prefs/quartiers.ABCD.prefs
+    	* 1. Copier le fichier resources/prefs/quartiers.prefs.template vers resources/prefs/quartiers.ABCD.prefs
     	* 2. Indiquer l'id de la commune dans quartier_id_commune (TODO : indiquer comment).
     	* 3. Remplir les quartiers de cette ville (TODO : indiquer comment).
     	* 4. Répéter pour configurer une autre ville.
