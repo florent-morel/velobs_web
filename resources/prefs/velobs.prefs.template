@@ -141,10 +141,9 @@ usertype['4']="Responsable pole association"
 
 
 
-###########
+############
 # LANGUAGE #
-###########
-# TODO
+############
 lang_1="1, 'France', 'fr'"
 lang_2="2, 'English', 'en'"
 
