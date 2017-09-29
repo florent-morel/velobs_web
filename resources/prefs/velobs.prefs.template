@@ -1,12 +1,13 @@
 
 
 
-############
-# DATABASE #
-############
-username="velobs"
-pwd="velobs"
-db="velobs"
+#############
+# CONFIGMAP #
+#############
+
+lat="43.6032"
+lon="1.4321"
+zoom="13"
 
 ###############
 # TERRITOIRES #
@@ -37,7 +38,7 @@ ter_3_ids="31395;31187;31165;31253;31287;31181;31486;31533;31499;31475;31248;314
 ############
 # See dedicated files quartiers_*.prefs
 #TODO include list of files
-quartier_file=/var/www/velobs/resources/prefs/quartiers_TLS
+commune_file=/var/www/velobs/resources/prefs/communes_TLS
 
 
 ############
@@ -45,25 +46,7 @@ quartier_file=/var/www/velobs/resources/prefs/quartiers_TLS
 ############
 # See dedicated files communes_*.prefs
 #TODO include list of files
-commune_file=/var/www/velobs/resources/prefs/communes_TLS
-
-
-#############
-# CONFIGMAP #
-#############
-
-lat="43.6157"
-lon="6.9435"
-zoom="12"
-
-
-#############
-# USERTYPE #
-#############
-usertype['1']="Administrateur"
-usertype['2']="Comcom"
-usertype['3']="Pole technique"
-usertype['4']="Responsable pole association"
+quartier_file=/var/www/velobs/resources/prefs/quartiers_TLS
 
 ################
 # USER - Admin #
@@ -79,24 +62,48 @@ admin_territoire_id="0"
 admin_name="Admin"
 admin_email="test@test.org"
 
+
+########
+# POLE #
+########
+# TODO
+
+
+
+########################
+## Advanced parameters #
+########################
+
+############
+# DATABASE #
+############
+username="velobs"
+pwd="velobs"
+db="velobs"
+
 ############
 # CATEGORY #
 ############
-category_0_lib="Stationnement"
-category_0_icon="iconmarker8"
-category_0_treerank="0"
-category_0_display="1"
+# 'Observations', 'iconmarker2', '1', '1')
+category[0]="1, 'Observations', 'iconmarker2', 1, 1"
+category[1]="2, 'Campagnes 2p2r en cours', 'iconmarker3', 2, 1"
+category[2]="3, 'Campagnes 2p2r relayées vers TM', 'iconmarker3', 3, 0"
 
 
 ################
 # SUB-CATEGORY #
 ################
-#subcategory_0_lib="Courte durée"
-#subcategory_0_icon="iconmarker11"
-#subcategory_0_treerank="1"
-#subcategory_0_display="0"
-#subcategory_0_proppublic="0"
-#subcategory_0_category_id="0"
+#subcategory[i]="lib_subcategory, icon_subcategory, treerank_subcategory, display_subcategory, proppublic_subcategory, category_id_category"
+subcategory[0]="2, 'Aménagement mal conçu', 'iconmarker2', 0, 1, 1, 1"
+subcategory[1]="3, 'Défaut d\'entretien ou détériorations', 'iconmarker17', 0, 1, 1, 1"
+subcategory[2]="4, 'Point noir, absence d\'aménagement', 'iconmarker15', 0, 1, 1, 1"
+subcategory[3]="14, 'Chicanes', 'iconmarker18', 3, 1, 1, 1"
+subcategory[4]="15, 'Bordures', 'iconmarker14', 4, 1, 1, 1"
+subcategory[5]="16, 'Stationnement génant', 'iconmarker3', 2, 1, 1, 1"
+subcategory[6]="17, 'Tourne à droite => laissez passer cyclistes', 'iconmarker19', 1, 1, 1, 1"
+subcategory[7]="18, 'Supports vélo', 'iconmarker16', 0, 1, 1, 1"
+subcategory[8]="19, 'Jalonnement', 'iconmarker13', 0, 1, 1, 1"
+
 
 
 
@@ -124,6 +131,15 @@ status_list['5']="A définir"
 status_list['6']="Test"
 
 
+#############
+# USERTYPE #
+#############
+usertype['1']="Administrateur"
+usertype['2']="Comcom"
+usertype['3']="Pole technique"
+usertype['4']="Responsable pole association"
+
+
 
 ###########
 # LANGUAGE #
@@ -131,3 +147,28 @@ status_list['6']="Test"
 # TODO
 lang_1="1, 'France', 'fr'"
 lang_2="2, 'English', 'en'"
+
+
+
+##############
+# ICONMARKER #
+##############
+iconmarker[1]="1, 'Musée', 'iconmarker1', ''"
+iconmarker[2]="2, 'Vélo', 'iconmarker2', ''"
+iconmarker[3]="3, 'Médical', 'iconmarker3', ''"
+iconmarker[4]="4, 'VTT', 'iconmarker4', ''"
+iconmarker[5]="5, 'bordures', 'iconmarker5', ''"
+iconmarker[6]="6, 'test', 'iconmarker6', ''"
+iconmarker[7]="7, 'tourne', 'iconmarker7', ''"
+iconmarker[8]="8, 'support vélo', 'iconmarker8', ''"
+iconmarker[9]="9, 'tourne à droite', 'iconmarker9', ''"
+iconmarker[10]="10, 'chicane', 'iconmarker10', ''"
+iconmarker[11]="11, 'chicane2', 'iconmarker11', ''"
+iconmarker[12]="12, 'bordures2', 'iconmarker12', ''"
+iconmarker[13]="13, 'Jalonnement', 'iconmarker13', ''"
+iconmarker[14]="14, 'bordures3', 'iconmarker14', ''"
+iconmarker[15]="15, 'absence', 'iconmarker15', ''"
+iconmarker[16]="16, 'supports', 'iconmarker16', ''"
+iconmarker[17]="17, 'defaut d''entretien', 'iconmarker17', ''"
+iconmarker[18]="18, 'chicanes', 'iconmarker18', ''"
+iconmarker[19]="19, 'tourne à  droite 2', 'iconmarker19', ''"

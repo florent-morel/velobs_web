@@ -70,10 +70,24 @@ done
 echo "############"
 echo "# CATEGORY #"
 echo "############"
-cmd_category_base="INSERT INTO category (lib_category, icon_category, treerank_category, display_category) VALUES "
+cmd_category_base="INSERT INTO category (id_category, lib_category, icon_category, treerank_category, display_category) VALUES "
 
-cmd_category_0="('$category_0_lib', '$category_0_icon', '$category_0_treerank', '$category_0_display')"
-echo "$cmd_category_base$cmd_category_0" | mysql -v -u $username -p$pwd $db
+for i in ${!category[@]}; do
+	cmd_category="(${category[$i]})"
+	echo "$cmd_category_base$cmd_category" | mysql -v -u $username -p$pwd $db
+done
+
+
+
+echo "################"
+echo "# SUB-CATEGORY #"
+echo "################"
+cmd_subcategory_base="INSERT INTO subcategory (id_subcategory, lib_subcategory, icon_subcategory, treerank_subcategory, display_subcategory, proppublic_subcategory, category_id_category) VALUES "
+
+for i in ${!subcategory[@]}; do
+	cmd_subcategory="(${subcategory[$i]})"
+	echo "$cmd_subcategory_base$cmd_subcategory" | mysql -v -u $username -p$pwd $db
+done
 
 
 echo "############"
@@ -111,6 +125,16 @@ cmd_language="($lang_2)"
 echo "$cmd_language_base$cmd_language" | mysql -v -u $username -p$pwd $db
 
 
+
+echo "##############"
+echo "# ICONMARKER #"
+echo "##############"
+cmd_iconmarker_base="INSERT INTO iconmarker (id_iconmarker, name_iconmarker, urlname_iconmarker, color_iconmarker) VALUES "
+
+for i in ${!iconmarker[@]}; do
+	cmd_iconmarker="(${iconmarker[$i]})"
+	echo "$cmd_iconmarker_base$cmd_iconmarker" | mysql -v -u $username -p$pwd $db
+done
 
 
 

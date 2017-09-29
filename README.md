@@ -62,6 +62,7 @@ C'est en production à Toulouse pour 2 pieds 2 roues sur : http://velobs.2p2r.or
     * POLE: [non configurable] liste des poles caractérisés par leur nom et leur contour géographique.
  
  * 	Paramètres avancés, à adapter au besoin : 	
+ 	* DATABASE : login, password et nom de la base de données MySQL VelObs.
  	* CATEGORY : libellés, icone, rang et affichage (?) des catégories d'observations.
  		* SUB-CATEGORY : libellés, icone, rang et affichage (?) des sous-catégories d'observations.
  	* PRIORITE : libellés des priorités des observations.

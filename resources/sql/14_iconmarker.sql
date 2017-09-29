@@ -37,26 +37,7 @@ CREATE TABLE `iconmarker` (
 -- Contenu de la table `iconmarker`
 --
 
-INSERT INTO `iconmarker` (`id_iconmarker`, `name_iconmarker`, `urlname_iconmarker`, `color_iconmarker`) VALUES
-(1, 'Musée', 'iconmarker1', ''),
-(2, 'Vélo', 'iconmarker2', ''),
-(3, 'Médical', 'iconmarker3', ''),
-(4, 'VTT', 'iconmarker4', ''),
-(5, 'bordures', 'iconmarker5', ''),
-(6, 'test', 'iconmarker6', ''),
-(7, 'tourne', 'iconmarker7', ''),
-(8, 'support vélo', 'iconmarker8', ''),
-(9, 'tourne à droite', 'iconmarker9', ''),
-(10, 'chicane', 'iconmarker10', ''),
-(11, 'chicane2', 'iconmarker11', ''),
-(12, 'bordures2', 'iconmarker12', ''),
-(13, 'Jalonnement', 'iconmarker13', ''),
-(14, 'bordures3', 'iconmarker14', ''),
-(15, 'absence', 'iconmarker15', ''),
-(16, 'supports', 'iconmarker16', ''),
-(17, 'defaut d''entretien', 'iconmarker17', ''),
-(18, 'chicanes', 'iconmarker18', ''),
-(19, 'tourne Ã  droite 2', 'iconmarker19', '');
+
 
 --
 -- Index pour les tables exportées
